@@ -6,6 +6,7 @@ class HomeScreen extends StatelessWidget {
 static const String routeName = "Home" ;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Islami",style: TextStyle(color: Colors.black),),),) ;
+    return Scaffold(appBar: AppBar(title: Text("Islami",style: TextStyle(color: Colors.black),),),
+    body: Column(children: [Text("new")],),) ;
   }
 }
