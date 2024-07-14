@@ -12,7 +12,7 @@ static const String routeName = "Home" ;
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Islami",style: TextStyle(color: Colors.red),),
+    return Scaffold(appBar: AppBar(title: Text("islami",style: TextStyle(color: Colors.blueGrey),),
 
     ),
 body: Text("islami"),  ) ;
