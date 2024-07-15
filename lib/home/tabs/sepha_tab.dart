@@ -15,7 +15,7 @@ class _SephaTabState extends State<SephaTab> {
   List <String>athkarName = [
     "سبحان الله",
     "الحمد الله",
-    "أكبر الله",
+    "الله أكبر",
     "لا حول ولا قوة الا بالله"
   ];
   int index = 0;
