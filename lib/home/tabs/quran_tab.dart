@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:islami/sura_details.dart';
 
-class QuranTab extends StatelessWidget {
+import '../../suramodel.dart';
+
+class QuranTab extends StatefulWidget {
   QuranTab({super.key});
+
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
   List<String> SuraNames = [
     "الفاتحه",
     "البقرة",
@@ -119,6 +128,7 @@ class QuranTab extends StatelessWidget {
     "الفلق",
     "الناس"
   ];
+
   List<String> numberOfAyaat = [
     "7",
     "286",
@@ -243,83 +253,89 @@ class QuranTab extends StatelessWidget {
       children: [
         Image.asset(
           "assets/image/moshaf_logo.png",
-          height: 227,
-          width: 205,
+          height: 277,
         ),
-        Divider(
-          color: Color(0xffB7935F),
-          height: 20,
-          thickness: 3,
-          endIndent: 0.5,
-          indent: 0.5,
-        ),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+        Table(
+          border: TableBorder.all(color: Color(0xffB7935F), width: 3),
           children: [
-            Text(
-              "عدد الايات",
-              style: TextStyle(
-                fontFamily: "ELMessiri",
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              "اسم السورة",
-              style: TextStyle(
-                fontFamily: "ELMessiri",
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-        Divider(
-          color: Color(0xffB7935F),
-          height: 20,
-          thickness: 3,
-          endIndent: 0.5,
-          indent: 0.5,
-        ),
-        Expanded(
-          child: ListView.separated(
-            separatorBuilder:(context,index) =>Divider(
-              color: Color(0xffB7935F),
-              height: 20,
-              thickness: 3,
-              endIndent: 0.5,
-              indent: 0.5,
-            ),
-            itemBuilder: (context, index) {
-              return Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    numberOfAyaat[index],
+            TableRow(children: [
+              TableCell(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    "عدد الآيات",
                     style: TextStyle(
-                fontFamily: "ELMessiri",
-                fontSize: 25,
-                fontWeight: FontWeight.w600,
-              ),
-                    textAlign: TextAlign.center,
-                  ),
-
-                  Text(
-                    SuraNames[index],
-                    style: TextStyle(
-                      fontFamily: "ELMessiri",
-                      fontSize: 25,
+                      fontFamily: "ElMessiri",
                       fontWeight: FontWeight.w600,
+                      fontSize: 25,
                     ),
                     textAlign: TextAlign.center,
                   ),
-
+                ),
+              ),
+              TableCell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      "اسم السورة",
+                      style: TextStyle(
+                        fontFamily: "ElMessiri",
+                        fontWeight: FontWeight.w600,
+                        fontSize: 25,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  )),
+            ]),
+          ],
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: SuraNames.length,
+            itemBuilder: (context, index) {
+              return Table(
+                border: TableBorder.all(color: Color(0xffB7935F), width: 1),
+                children: [
+                  TableRow(children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        numberOfAyaat[index],
+                        style: TextStyle(
+                          fontFamily: "ElMessiri",
+                          fontWeight: FontWeight.w600,
+                          fontSize: 25,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            SuraDetails.routeName,
+                            arguments: SuraModel(SuraNames[index], index),
+                          );
+                        },
+                        child: Text(
+                          SuraNames[index],
+                          style: TextStyle(
+                            fontFamily: "ElMessiri",
+                            fontWeight: FontWeight.w600,
+                            fontSize: 25,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ]),
                 ],
               );
             },
-            itemCount: numberOfAyaat.length,
           ),
-        )
+        ),
       ],
     );
   }

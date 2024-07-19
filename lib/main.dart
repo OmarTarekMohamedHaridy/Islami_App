@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/islami.dart';
+import 'package:islami/sura_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class _MyAppState extends State<MyApp> {
        debugShowCheckedModeBanner: false,
       routes: {
 HomeScreen.routeName : (context) => HomeScreen(),
+        SuraDetails.routeName : (context) => SuraDetails(),
       },
       initialRoute:HomeScreen.routeName ,
     );
