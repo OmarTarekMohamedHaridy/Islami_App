@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islami/home/islami.dart';
 import 'package:islami/sura_details.dart';
 
+import 'hadith_details.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +24,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
 HomeScreen.routeName : (context) => HomeScreen(),
         SuraDetails.routeName : (context) => SuraDetails(),
+        HadithDetails.routeName : (context) => HadithDetails(),
       },
       initialRoute:HomeScreen.routeName ,
     );
