@@ -32,26 +32,25 @@ List<HadithModel>allAhadith =[];
       Image.asset(
       "assets/image/59253-quran-basmala-islamic-kufic-arabic-calligraphy-icon.png",
       height: 219),
-        Divider(color: Color(0xffB7935F),thickness: 3,),
+        Divider(),
         Text("الأحاديث",style: TextStyle(
           fontFamily: "ElMessiri",
           fontWeight: FontWeight.w600,
           fontSize: 25,
         ),
             textAlign: TextAlign.center,),
-        Divider(color: Color(0xffB7935F),thickness: 3,),
+        Divider(),
         Expanded(
           child: ListView.separated(
-            separatorBuilder: (context, index) => Divider(color: Color(0xffB7935F),thickness: 2,),
+            separatorBuilder: (context, index) => Divider(thickness: 1,),
             itemCount: allAhadith.length,
             itemBuilder: (context, index) {
             return InkWell(onTap: () {
 Navigator.pushNamed(context, HadithDetails.routeName,
 arguments:allAhadith[index] );
             },
-              child: Text(allAhadith[index].title,style: TextStyle(fontFamily: "ElMessiri",
-                fontWeight: FontWeight.w600,
-                fontSize: 25,),
+              child: Text(allAhadith[index].title,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,),
             );
           },),

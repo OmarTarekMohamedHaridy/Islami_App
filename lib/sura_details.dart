@@ -22,26 +22,22 @@ class _SuraDetailsState extends State<SuraDetails> {
     }
     return Container(decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/image/bg3.png"))),
       child:
-      Scaffold( backgroundColor: Colors.transparent,
-        appBar: AppBar( backgroundColor: Colors.transparent,
-          centerTitle: true,iconTheme: IconThemeData(size: 30,color: Colors.black),
-          title: Text(model.name,style: TextStyle(fontFamily: "ElMessiri",
-          fontWeight: FontWeight.bold,
-          fontSize: 30,),),
+      Scaffold(
+        appBar: AppBar(
+
+          title: Text(model.name,),
         ),
         body: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Card(shape: OutlineInputBorder(borderRadius: BorderRadius.circular(15),borderSide: BorderSide(color: Colors.black)),
-            color: Colors.white,
+            color:  Color(0xff141A2E),
 
             child: ListView.builder(itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Text(verses[index],
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontFamily: "ElMessiri",
-                  fontWeight: FontWeight.w400,
-                  fontSize: 25,),),
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600,color: Color(0xffFACC1D)),),
               );
             },
             itemCount: verses.length,),

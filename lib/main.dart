@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/home/islami.dart';
+import 'package:islami/my_theme_data.dart';
 import 'package:islami/sura_details.dart';
 
 import 'hadith_details.dart';
@@ -21,6 +22,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
        debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
+      theme:MyThemeData.LightTheme,
+      darkTheme:MyThemeData.DarkTheme,
       routes: {
 HomeScreen.routeName : (context) => HomeScreen(),
         SuraDetails.routeName : (context) => SuraDetails(),

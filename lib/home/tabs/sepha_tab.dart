@@ -45,11 +45,7 @@ class _SephaTabState extends State<SephaTab> {
         padding: const EdgeInsets.only(top: 19.9),
         child: Text(
           "عدد التسبيحات",
-          style: TextStyle(
-            fontFamily: "ElMessiri",
-            fontWeight: FontWeight.w600,
-            fontSize: 25,
-          ),
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
           textAlign: TextAlign.center,
         ),
       ),
@@ -63,11 +59,7 @@ class _SephaTabState extends State<SephaTab> {
                 borderRadius: BorderRadius.circular(30)),
             child: Text(
               "$counter",
-              style: TextStyle(
-                fontFamily: "ElMessiri",
-                fontWeight: FontWeight.w600,
-                fontSize: 25,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),
           ),
@@ -83,11 +75,7 @@ class _SephaTabState extends State<SephaTab> {
                 borderRadius: BorderRadius.circular(30)),
             child: Text(
      "${athkarName[index]}"  ,
-              style: TextStyle(
-                fontFamily: "ElMessiri",
-                fontWeight: FontWeight.w600,
-                fontSize: 25,
-              ),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
               textAlign: TextAlign.center,
             ),
           ),

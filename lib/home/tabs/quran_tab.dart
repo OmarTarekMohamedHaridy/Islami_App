@@ -264,11 +264,7 @@ class _QuranTabState extends State<QuranTab> {
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
                     "عدد الآيات",
-                    style: TextStyle(
-                      fontFamily: "ElMessiri",
-                      fontWeight: FontWeight.w600,
-                      fontSize: 25,
-                    ),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -278,11 +274,7 @@ class _QuranTabState extends State<QuranTab> {
                     padding: const EdgeInsets.all(12.0),
                     child: Text(
                       "اسم السورة",
-                      style: TextStyle(
-                        fontFamily: "ElMessiri",
-                        fontWeight: FontWeight.w600,
-                        fontSize: 25,
-                      ),
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
                       textAlign: TextAlign.center,
                     ),
                   )),
@@ -301,11 +293,7 @@ class _QuranTabState extends State<QuranTab> {
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         numberOfAyaat[index],
-                        style: TextStyle(
-                          fontFamily: "ElMessiri",
-                          fontWeight: FontWeight.w600,
-                          fontSize: 25,
-                        ),
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -321,11 +309,7 @@ class _QuranTabState extends State<QuranTab> {
                         },
                         child: Text(
                           SuraNames[index],
-                          style: TextStyle(
-                            fontFamily: "ElMessiri",
-                            fontWeight: FontWeight.w600,
-                            fontSize: 25,
-                          ),
+                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
                           textAlign: TextAlign.center,
                         ),
                       ),
