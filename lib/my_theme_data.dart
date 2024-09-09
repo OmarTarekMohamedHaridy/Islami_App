@@ -48,11 +48,10 @@ class MyThemeData {
 
   static ThemeData DarkTheme =
   ThemeData(
-      scaffoldBackgroundColor:
-      Color(0xff141A2E),
+      scaffoldBackgroundColor: Colors.transparent,
+
       appBarTheme:
-      AppBarTheme(backgroundColor:Color(0xff141A2E),
-          centerTitle: true,
+      AppBarTheme(backgroundColor: Colors.transparent,centerTitle: true,
           elevation: 0,
           iconTheme: IconThemeData(size: 35,color: Colors.white),
           shadowColor: Colors.transparent,
